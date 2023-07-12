@@ -64,7 +64,7 @@ const _addTelephoneAndAddressToThePerson = (person, personalInfo) => {
         let landline = [];
         let mobile = [];
         telephoneNumbers.forEach((currentTValue )=> {
-            return Number(currentTValue) % 2 === 0 ? mobile.push(currentTValue) : landline.push(currentTValue);
+            return _isMobile(currentTValue) ? mobile.push(currentTValue) : landline.push(currentTValue);
         })
 
         person.phone = {
@@ -84,4 +84,8 @@ const _addTelephoneAndAddressToThePerson = (person, personalInfo) => {
 
         person.address = address;
     }
+}
+
+const _isMobile = (text) => {
+    return !!text.split('-').join('').match(/^((((0{2}?)|(\+){1})46)|0)7[\d]{8}/);
 }
