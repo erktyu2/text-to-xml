@@ -21,6 +21,16 @@ Install dependencies and run the following command
 
 >npm run make
 
+## Known issue on some mac computers
+there is a known issue that sometimes when executable is downloaded, macOS 
+doesn't allow user to run that executable app.
+
+it says as the following
+>"your-app.app" is damaged and can’t be opened. You should move it to the Bin.
+
+if it is the issue then run the following command in the terminal
+>xattr -d com.apple.quarantine path/to/your/app/your-app.app
+
 # Development
 To run your code in development mode, install dependencies and run the following command
 >npm start
