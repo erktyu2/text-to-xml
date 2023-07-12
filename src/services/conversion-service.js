@@ -8,7 +8,7 @@ const TELEPHONE_TAG = 'T';
 
 module.exports = ConversionService  = {
     ConvertJsonToXML: (jsonText)=>{
-        const builder = new xml2js.Builder({renderOpts: { pretty: true}, headless: true, emptyTag: ''});
+        const builder = new xml2js.Builder({renderOpts: { pretty: true}, headless: true});
         return builder.buildObject(jsonText);
     },
     ConvertPipedTextToJson: (text)=>{
